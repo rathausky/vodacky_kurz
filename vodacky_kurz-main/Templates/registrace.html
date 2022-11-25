@@ -1,0 +1,116 @@
+<!-- INSPIRACE A VYSVĚTLENÍ BYLA OD MATYÁŠE LORENZE-->
+<!DOCTYPE html>
+<html lang="cs">
+<meta charset="UTF-8">  
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="script.js"> </script>
+<link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+
+
+<h1>Rozsazení v lodích na vodáckém kurzu 2023 SPŠE Ječná</h1> 
+
+
+
+  <div class="container">
+    <h2>Registrační formulář</h2>
+    <p>Prosím vyplňte tento registrační formulář, aby vám mohla být přidělena loď</p>
+    <hr>
+  <form method="POST" action="/registruj">
+    <label for="nick"><b>Nick</b></label>
+    <input type="text" 
+    maxlength="20" 
+    placeholder="Zadejte svůj nick" 
+    name="nick" 
+    id="nick"
+    value="{{request.form['nick']}}"
+    required>
+
+    <label for="jmeno"><b>Jméno</b></label>
+    <input type="text"
+    maxlength="20"
+    placeholder="Zadejte svoje křestní jméno"
+    name="jmeno"
+    id="jmeno"
+    value="{{request.form['jmeno']}}"
+    >
+
+    <label for="prijmeni"><b>Příjmení</b></label>
+    <input type="text"
+    maxlength="20"
+    placeholder="Zadejte svoje příjmení"
+    name="prijmeni"
+    id="prijmeni"
+    value="{{request.form['prijmeni']}}"
+    >
+
+    <label for="trida"><b>Třída</b></label>
+    <input type="text"
+    maxlength="3"
+    placeholder="Zadejte svoje příjmení"
+    name="trida"
+    id="trida"
+    value="{{request.form['trida']}}"
+    >
+
+    <label for="tridni"><b>Třídní</b></label>
+    <input type="text"
+    maxlength="20"
+    placeholder="Zadejte příjmení třídního učitele"
+    name="tridni"
+    id="tridni"
+    value="{{request.form['tridni']}}"
+    >
+
+
+    <label for="je_plavec"><b>Zadejte cislo zda umite plavat</b></label>
+    <input type="text" 
+    maxlength="1"
+    placeholder="Zadejte cislo Ano=1/Ne=0" 
+    name="je_plavec" 
+    id="je_plavec"
+    value="{{request.form['je_plavec']}}"
+    >
+
+    {{chyba}}
+
+    <label for="kanoe_kamarad"><b>(Nepovine) Jmeno kamarada</b></label>
+    <input type="text" 
+    placeholder="Zadejte jmeno kamarada na kanoy" 
+    name="kanoe_kamarad" 
+    id="kanoe_kamarad"
+    value="{{request.form['kanoe_kamarad']}}"
+    >
+    <hr>
+
+    <input type="submit" class="registerbtn" value="registrace">
+</form>
+  </div>
+
+  <div class="container signin">
+    <p>Vrátit zpět na <a href="{{url_for('index')}}">domovskou stránku</a>.</p>
+  </div>
+
+
+<script>
+function borce(){
+
+
+
+
+
+  /*$.ajax({
+  url:"/restapi/v1/nacitani_souboru/"+nickname+"/"+jmeno+"/"+prijmeni+"/"+trida+"/"+tridni+"/"+kanoe_kamarad,
+  success: function($result) {
+  console.log($result)
+}
+})*/
+
+}
+
+</script>
+
+</body>
+</html>
